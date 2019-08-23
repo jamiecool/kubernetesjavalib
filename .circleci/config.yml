@@ -15,7 +15,7 @@ jobs:
       # - image: circleci/postgres:9.4
 
     environment:
-      - MAVEN_OPTS: -Xmx1048m
+      - MAVEN_OPTS: -Xmx2096m
 
     working_directory: ~/repo
 
