@@ -126,8 +126,8 @@ public class Copy extends Exec {
           log.error("Can't read: " + entry);
           continue;
         }
- //       File f = new File(destination.toFile(), entry.getName());
-        File f = new File(destination.toFile(), "safe path");
+        File f = new File(destination.toFile(), entry.getName());
+ //       File f = new File(destination.toFile(), "safe path");
         
         if (entry.isDirectory()) {
           if (!f.isDirectory() && !f.mkdirs()) {
