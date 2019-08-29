@@ -127,7 +127,7 @@ public class Copy extends Exec {
           continue;
         }
         // File f = new File(destination.toFile(), entry.getName());
-        File f = new File(destination.toFile());
+        File f = new File(srcPath);
         if (entry.isDirectory()) {
           if (!f.isDirectory() && !f.mkdirs()) {
             throw new IOException("create directory failed: " + f);
