@@ -126,8 +126,7 @@ public class Copy extends Exec {
           log.error("Can't read: " + entry);
           continue;
         }
-        // File f = new File(destination.toFile(), entry.getName());
-        File f = new File(srcPath);
+        File f = new File(destination.toFile(), entry.getName());
         if (entry.isDirectory()) {
           if (!f.isDirectory() && !f.mkdirs()) {
             throw new IOException("create directory failed: " + f);
