@@ -106,6 +106,7 @@ public class Copy extends Exec {
   public void copyDirectoryFromPod(
       String namespace, String pod, String container, String srcPath, Path destination)
       throws ApiException, IOException {
+      
     // TODO: Test that 'tar' is present in the container?
     final Process proc =
         this.exec(
@@ -126,6 +127,8 @@ public class Copy extends Exec {
           continue;
         }
         File f = new File(destination.toFile(), entry.getName());
+ //       File f = new File(destination.toFile(), "safe path");
+        
         if (entry.isDirectory()) {
           if (!f.isDirectory() && !f.mkdirs()) {
             throw new IOException("create directory failed: " + f);
